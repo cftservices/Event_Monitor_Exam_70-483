@@ -8,7 +8,6 @@ namespace Monitor_APP
 {
     public class Class1
     {
-
-        public int Type { get; set; }
+        public int MyProperty { get; set; }
     }
 }
