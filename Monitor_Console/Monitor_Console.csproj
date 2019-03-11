@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{235755B6-FE54-400A-B079-FD5CF7B32E46}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Monitor_APP</RootNamespace>
-    <AssemblyName>Monitor_APP</AssemblyName>
+    <ProjectGuid>{A9D8F445-393D-43CA-B4A0-8209AA15D371}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Monitor_Console</RootNamespace>
+    <AssemblyName>Monitor_Console</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,15 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IMessage.cs" />
-    <Compile Include="Message_Handler.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SMC_Logger.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\aaLogReader\aaLogReader.csproj">
-      <Project>{028d0691-41c6-426e-b378-fb291425cf6d}</Project>
-      <Name>aaLogReader</Name>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Monitor_APP\Monitor_APP.csproj">
+      <Project>{235755b6-fe54-400a-b079-fd5cf7b32e46}</Project>
+      <Name>Monitor_APP</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

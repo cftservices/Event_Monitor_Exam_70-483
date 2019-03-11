@@ -5,16 +5,42 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monitor_APP", "Monitor_APP.csproj", "{235755B6-FE54-400A-B079-FD5CF7B32E46}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aaLogReader", "..\aaLogReader\aaLogReader.csproj", "{028D0691-41C6-426E-B378-FB291425CF6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monitor_Console", "..\Monitor_Console\Monitor_Console.csproj", "{A9D8F445-393D-43CA-B4A0-8209AA15D371}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		aaLogWebAPI-Debug|Any CPU = aaLogWebAPI-Debug|Any CPU
 		Debug|Any CPU = Debug|Any CPU
+		Release - aaSplunkLogConsole|Any CPU = Release - aaSplunkLogConsole|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{235755B6-FE54-400A-B079-FD5CF7B32E46}.aaLogWebAPI-Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{235755B6-FE54-400A-B079-FD5CF7B32E46}.aaLogWebAPI-Debug|Any CPU.Build.0 = Debug|Any CPU
 		{235755B6-FE54-400A-B079-FD5CF7B32E46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{235755B6-FE54-400A-B079-FD5CF7B32E46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{235755B6-FE54-400A-B079-FD5CF7B32E46}.Release - aaSplunkLogConsole|Any CPU.ActiveCfg = Release|Any CPU
+		{235755B6-FE54-400A-B079-FD5CF7B32E46}.Release - aaSplunkLogConsole|Any CPU.Build.0 = Release|Any CPU
 		{235755B6-FE54-400A-B079-FD5CF7B32E46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{235755B6-FE54-400A-B079-FD5CF7B32E46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{028D0691-41C6-426E-B378-FB291425CF6D}.aaLogWebAPI-Debug|Any CPU.ActiveCfg = aaLogWebAPI-Debug|Any CPU
+		{028D0691-41C6-426E-B378-FB291425CF6D}.aaLogWebAPI-Debug|Any CPU.Build.0 = aaLogWebAPI-Debug|Any CPU
+		{028D0691-41C6-426E-B378-FB291425CF6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{028D0691-41C6-426E-B378-FB291425CF6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{028D0691-41C6-426E-B378-FB291425CF6D}.Release - aaSplunkLogConsole|Any CPU.ActiveCfg = Release - aaSplunkLogConsole|Any CPU
+		{028D0691-41C6-426E-B378-FB291425CF6D}.Release - aaSplunkLogConsole|Any CPU.Build.0 = Release - aaSplunkLogConsole|Any CPU
+		{028D0691-41C6-426E-B378-FB291425CF6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{028D0691-41C6-426E-B378-FB291425CF6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9D8F445-393D-43CA-B4A0-8209AA15D371}.aaLogWebAPI-Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9D8F445-393D-43CA-B4A0-8209AA15D371}.aaLogWebAPI-Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9D8F445-393D-43CA-B4A0-8209AA15D371}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9D8F445-393D-43CA-B4A0-8209AA15D371}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9D8F445-393D-43CA-B4A0-8209AA15D371}.Release - aaSplunkLogConsole|Any CPU.ActiveCfg = Release|Any CPU
+		{A9D8F445-393D-43CA-B4A0-8209AA15D371}.Release - aaSplunkLogConsole|Any CPU.Build.0 = Release|Any CPU
+		{A9D8F445-393D-43CA-B4A0-8209AA15D371}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9D8F445-393D-43CA-B4A0-8209AA15D371}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
