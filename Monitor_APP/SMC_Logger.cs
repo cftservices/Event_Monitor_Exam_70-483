@@ -15,7 +15,6 @@ namespace Monitor_APP
         {
             // Read SMC Message
             aaLogReader.OptionsStruct testOptions = new aaLogReader.OptionsStruct();
-            
             testOptions.LogDirectory = "\\\\localhost\\C$\\ProgramData\\ArchestrA\\LogFiles";
 
             aaLogReader.aaLogReader logReader = new aaLogReader.aaLogReader(testOptions);
