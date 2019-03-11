@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Monitor_APP
 {
@@ -19,12 +15,7 @@ namespace Monitor_APP
         public string ReadMessage()
         {
             // Read SMC Message
-
-
-
-
-            Console.WriteLine("");
-
+            Console.WriteLine("commit test");
 
             return LogMessage;
         }
