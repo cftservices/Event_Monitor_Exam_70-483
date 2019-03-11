@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace Monitor_APP
 {
-    public class Class1
+    class Message_Handler
     {
-        public int MyProperty { get; set; }
+        // Concurrent Collections
+
+
+        // Read errors
+        // Read warnings
+
+        // Send events callback
+
     }
 }
