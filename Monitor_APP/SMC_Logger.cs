@@ -8,7 +8,7 @@ namespace Monitor_APP
 {
     public class SMC_Logger : IMessage
     {
-        private static ConcurrentQueue<Object> SMC_Messages;
+        private static ConcurrentQueue<String> SMC_Messages;
         public string LogMessage { get; set; }
                
         public string ReadMessage()
@@ -19,8 +19,11 @@ namespace Monitor_APP
 
             aaLogReader.aaLogReader logReader = new aaLogReader.aaLogReader(testOptions);
             
-            DateTime dtStartDate = new System.DateTime(2018, 4, 9, DateTime.Now.Hour - 2, DateTime.Now.Minute, DateTime.Now.Second);
-            DateTime dtEndDate = new System.DateTime(2018, 4, 9, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+            DateTime dtStartDate = new System.DateTime(2019, 3, 13, DateTime.Now.Hour - 12, DateTime.Now.Minute, DateTime.Now.Second);
+            DateTime dtEndDate = new System.DateTime(2019, 3, 13, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+
+            Console.Write("Start time " + dtStartDate + "\n");
+            Console.Write("End time " + dtEndDate + "\n");
 
             ulong MessageNumber_Start = 0;
             ulong MessageNumber_End = 0;
@@ -32,7 +35,7 @@ namespace Monitor_APP
 
                 if (records_start.Count == 0)
                 {
-
+                    Console.Write("No log rows found.!" + "\n");
                 }
                 else
                 {
@@ -69,14 +72,18 @@ namespace Monitor_APP
 
                 List<LogRecord> records = logReader.GetRecordsByStartTimestampAndCount(dtStartDate, NumberMessageRecords);
                 List<string> groupedMessages = new List<string>();
+                
+                
 
                 foreach (var LogRecord in records)
                 {
-                    // TODO: Place in Concurrent Collection 
-                    LogMessage = LogRecord.Message.ToString();
-
+                    //setting all the records in a concurrent queue FIFO style
+                    SMC_Messages.Enqueue(LogRecord.Message.ToString());
                 }
-                
+
+                Console.WriteLine("the size of the concurrent queue is " + SMC_Messages.Count.ToString());
+                Console.ReadKey();
+
             }
             catch (Exception ex)
             {
