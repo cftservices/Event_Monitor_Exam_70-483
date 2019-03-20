@@ -3,15 +3,15 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using Monitor_APP.Interfaces;
 
 namespace Monitor_APP
 {
-    public class SMC_Logger : IMessage
+    public abstract class SMC_Logger : ISMC_Logger
     {
-        private static ConcurrentQueue<String> SMC_Messages;
-        public string LogMessage { get; set; }
+        private static ConcurrentQueue<LogRecord> SMC_Messages = new ConcurrentQueue<LogRecord>();
                
-        public string ReadMessage()
+         public void ReadMessage()
         {
             // Read SMC Message
             aaLogReader.OptionsStruct testOptions = new aaLogReader.OptionsStruct();
@@ -72,28 +72,27 @@ namespace Monitor_APP
 
                 List<LogRecord> records = logReader.GetRecordsByStartTimestampAndCount(dtStartDate, NumberMessageRecords);
                 List<string> groupedMessages = new List<string>();
-                
-                
 
+                //setting all the records in a concurrent queue FIFO style
+                //if we want to expand the features, let's set the entire object.
                 foreach (var LogRecord in records)
                 {
-                    //setting all the records in a concurrent queue FIFO style
-                    SMC_Messages.Enqueue(LogRecord.Message.ToString());
+                    SMC_Messages.Enqueue(LogRecord);
                 }
 
-                Console.WriteLine("the size of the concurrent queue is " + SMC_Messages.Count.ToString());
+                Console.WriteLine("Finished setting the logrecord in the queue.\n");
+                Console.WriteLine("The size of the concurrent queue is " + SMC_Messages.Count.ToString());
                 Console.ReadKey();
+
+                //TODO: now we have to dequeue this SMC_Messages 
 
             }
             catch (Exception ex)
             {
-
                 Console.WriteLine(ex.Message);
             }
 
-            
-            
-            return LogMessage;
         }
+    
     }
 }
