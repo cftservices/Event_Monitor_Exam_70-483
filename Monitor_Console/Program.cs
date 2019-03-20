@@ -12,7 +12,7 @@ namespace Monitor_Console
         static void Main(string[] args)
         {
 
-            SMC_Logger SMC_Log = new SMC_Logger();
+            SMC_Logger_Info SMC_Log = new SMC_Logger_Info();
             SMC_Log.ReadMessage();
 
             //1. collect the messages
