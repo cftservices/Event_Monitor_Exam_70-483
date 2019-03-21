@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace Monitor_APP
 {
-    public class SMC_Logger_Info : SMC_Logger
+    public class SMC_Logger_Warning : SMC_Logger
     {
-        public SMC_Logger_Info()
+        public SMC_Logger_Warning()
         {
-            Console.WriteLine("SMC_Logger_Info created");
+            Console.WriteLine("SMC_Logger_Warning created");
             //decide what has to happen here? 
         }
-
-    public override void ReadMessage()
+        public override void ReadMessage()
         {
 
         }

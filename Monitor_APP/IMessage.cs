@@ -10,7 +10,5 @@ namespace Monitor_APP
     {
         string LogMessage { get; set; }
         string ReadMessage();
-                          
-
     }
 }

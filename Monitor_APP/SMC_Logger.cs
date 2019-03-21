@@ -10,8 +10,13 @@ namespace Monitor_APP
     public abstract class SMC_Logger : ISMC_Logger
     {
         private static ConcurrentQueue<LogRecord> SMC_Messages = new ConcurrentQueue<LogRecord>();
-               
-         public void ReadMessage()
+
+        public virtual void ReadMessage()
+        {
+            //TODO: has to be implemented yet
+        }
+
+        public virtual void CollectMessage()
         {
             // Read SMC Message
             aaLogReader.OptionsStruct testOptions = new aaLogReader.OptionsStruct();
@@ -19,8 +24,8 @@ namespace Monitor_APP
 
             aaLogReader.aaLogReader logReader = new aaLogReader.aaLogReader(testOptions);
             
-            DateTime dtStartDate = new System.DateTime(2019, 3, 13, DateTime.Now.Hour - 12, DateTime.Now.Minute, DateTime.Now.Second);
-            DateTime dtEndDate = new System.DateTime(2019, 3, 13, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+            DateTime dtStartDate = new System.DateTime(2019, 3, 20, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+            DateTime dtEndDate = new System.DateTime(2019, 3, 22, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
 
             Console.Write("Start time " + dtStartDate + "\n");
             Console.Write("End time " + dtEndDate + "\n");
@@ -82,10 +87,8 @@ namespace Monitor_APP
 
                 Console.WriteLine("Finished setting the logrecord in the queue.\n");
                 Console.WriteLine("The size of the concurrent queue is " + SMC_Messages.Count.ToString());
+                Console.WriteLine("END.\n");
                 Console.ReadKey();
-
-                //TODO: now we have to dequeue this SMC_Messages 
-
             }
             catch (Exception ex)
             {
@@ -93,6 +96,9 @@ namespace Monitor_APP
             }
 
         }
+
+
+
     
     }
 }

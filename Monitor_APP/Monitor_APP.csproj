@@ -46,7 +46,9 @@
     <Compile Include="Message_Handler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SMC_Logger.cs" />
+    <Compile Include="SMC_Logger_Error.cs" />
     <Compile Include="SMC_Logger_Info.cs" />
+    <Compile Include="SMC_Logger_Warning.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aaLogReader\aaLogReader.csproj">
